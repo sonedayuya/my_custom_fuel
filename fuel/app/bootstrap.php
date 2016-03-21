@@ -9,6 +9,8 @@ require COREPATH.'bootstrap.php';
 	'Controller' => APPPATH.'classes/fuel/core/controller.php',
 	'Presenter' => APPPATH.'classes/fuel/core/presenter.php',
 	'View' => APPPATH.'classes/fuel/core/view.php',
+	'Autoloader' => APPPATH.'classes/fuel/core/autoloader.php',
+	'Router' => APPPATH.'classes/fuel/core/router.php'
 ));
 
 // Register the autoloader

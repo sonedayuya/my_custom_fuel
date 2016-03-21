@@ -25,6 +25,7 @@ define('DOCROOT', __DIR__.DIRECTORY_SEPARATOR);
  * Path to the application directory.
  */
 define('APPPATH', realpath(__DIR__.'/../fuel/app/').DIRECTORY_SEPARATOR);
+define('APPFUELPATH', realpath(__DIR__.'/../fuel/app/classes/fuel/core/').DIRECTORY_SEPARATOR);
 
 /**
  * Path to the default packages directory.
@@ -48,7 +49,8 @@ if ( ! file_exists(COREPATH.'classes'.DIRECTORY_SEPARATOR.'autoloader.php'))
 
 // Activate the framework class autoloader
 require COREPATH.'classes'.DIRECTORY_SEPARATOR.'autoloader.php';
-class_alias('Fuel\\Core\\Autoloader', 'Autoloader');
+require APPFUELPATH.'autoloader.php';
+
 
 // Exception route processing closure
 $routerequest = function($route = null, $e = false)
