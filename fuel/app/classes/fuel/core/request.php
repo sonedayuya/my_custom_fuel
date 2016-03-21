@@ -114,7 +114,10 @@ class Request extends \Fuel\Core\Request
 					$class->hasMethod('before') and $class->getMethod('before')->invoke($this->controller_instance);
 
 					$action->invokeArgs($this->controller_instance, $this->method_params);
+
 					$response = $this->get_view_response($this->controller_instance);
+
+					$class->hasMethod('set_partial') and $class->getMethod('set_partial')->invoke($this->controller_instance, $response);
 
 					$class->hasMethod('after') and $response = $class->getMethod('after')->invoke($this->controller_instance, $response);
 

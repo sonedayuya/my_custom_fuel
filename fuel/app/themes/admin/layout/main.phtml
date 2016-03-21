@@ -2,12 +2,40 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>FuelPHP Framework</title>
-	<?php echo Asset::css('bootstrap.css'); ?>
-    <?= empty($css) === true ? '' : $css ?>
-    <?= empty($js) === true ? '' : $js ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title><?= empty($title) === true ? '' : $title ?></title>
+	<!-- Compiled and minified CSS -->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+	<?php echo Asset::css('admin/common.css'); ?>
+	<?= empty($css) === true ? '' : $css ?>
 </head>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<script>
+	$(function(){
+		$('.button-collapse').sideNav({
+			menuWidth: 200, // Default is 240
+			edge: 'right', // Choose the horizontal origin
+			closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+		});
+		$(document).ready(function() {
+		  $('select').material_select();
+		});
+	});
+</script>
+<?= empty($js) === true ? '' : $js ?>
 <body>
-    <?= $content ?>
+	<?= $partials['header'];  ?>
+	<main>
+		<nav class="top-nav">
+			<div class="container">
+				<div class="nav-wrapper"></div>
+			</div>
+		</nav>
+		<?= $content ?>
+	</main>
+	<?= $partials['footer'];  ?>
 </body>
 </html>
