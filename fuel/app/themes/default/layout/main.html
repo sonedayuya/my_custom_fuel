@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FuelPHP Framework</title>
+	<?php echo Asset::css('bootstrap.css'); ?>
+	<?= empty($css) === true ? '' : $css ?>
+	<?= empty($js) === true ? '' : $js ?>
+</head>
+<body>
+    <?= $content ?>
+</body>
+</html>
